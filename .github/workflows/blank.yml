@@ -20,6 +20,10 @@ jobs:
         run: |
           set +e
           find / -name 'librabbitmq.so.4' 2>/dev/null
+          apt search librabbitmq4
+          apt-cache depends librabbitmq4
+          apt-cache policy librabbitmq4
+          apt-cache show librabbitmq4
           set -e
 
       - name: install jonathonf/ffmpeg-4
