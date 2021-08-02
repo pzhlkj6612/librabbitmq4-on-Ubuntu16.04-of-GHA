@@ -26,6 +26,15 @@ jobs:
           apt-cache show librabbitmq4
           set -e
 
+      - name: find libssl1.1
+        run: |
+          set +e
+          apt search libssl1.1
+          apt-cache depends libssl1.1
+          apt-cache policy libssl1.1
+          apt-cache show libssl1.1
+          set -e
+
       - name: install jonathonf/ffmpeg-4
         run: |
           sudo add-apt-repository ppa:jonathonf/ffmpeg-4
